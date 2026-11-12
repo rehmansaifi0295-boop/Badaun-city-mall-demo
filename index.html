@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A concept website for Budaun City Mall. Demo only; details require mall management approval.">
+<title>Budaun City Mall | Shopping, Food & Entertainment</title>
+<style>
+:root{--navy:#101c35;--blue:#234b83;--gold:#e8b95b;--ink:#172033;--muted:#667085;--paper:#f6f7fb;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(16,28,53,.97);color:#fff;box-shadow:0 4px 20px #0c183022}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:900;letter-spacing:.08em;font-size:1.05rem}.brand span{display:block;color:var(--gold);font-size:.65rem;letter-spacing:.24em}
+nav{display:flex;gap:24px;align-items:center;font-size:.92rem}nav a:hover{color:var(--gold)}.menu{display:none;background:none;color:#fff;border:1px solid #ffffff55;padding:8px 12px;border-radius:8px}
+.hero{background:linear-gradient(110deg,#101c35f2,#172d50d9),url('https://images.unsplash.com/photo- mall-placeholder?auto=format&fit=crop&w=1800&q=85');background-color:#172d50;background-size:cover;background-position:center;color:#fff;padding:105px 0 100px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff22;border-radius:50%;right:-100px;top:-140px;box-shadow:0 0 0 55px #ffffff08,0 0 0 110px #ffffff06}
+.eyebrow{color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.2em;font-size:.76rem}.hero h1{font-size:clamp(2.5rem,6vw,5rem);line-height:1.04;max-width:720px;margin:16px 0}.hero p{color:#e1e8f2;max-width:560px;font-size:1.1rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-block;padding:13px 20px;border-radius:9px;font-weight:800;background:var(--gold);color:#172033;border:1px solid var(--gold)}.btn.secondary{background:transparent;color:#fff;border-color:#ffffff77}.btn:hover{transform:translateY(-2px)}
+.notice{background:#fff6df;color:#72521a;text-align:center;padding:10px 15px;font-size:.84rem}
+section{padding:76px 0}.section-head{text-align:center;max-width:680px;margin:0 auto 36px}.section-head .eyebrow{color:#9a6a16}.section-head h2{font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.15;margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid #e8ebf1;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px #1720330a}.card .visual{height:170px;background:linear-gradient(135deg,#dbe5f3,#f2e8d6);display:grid;place-items:center;font-size:3rem}.card-content{padding:20px}.card h3{margin:0 0 7px}.card p{margin:0;color:var(--muted);font-size:.94rem}.tag{display:inline-block;margin-top:14px;padding:5px 9px;border-radius:20px;background:#f1f4f9;color:#4b5c76;font-size:.75rem;font-weight:700}
+.alt{background:var(--paper)}.feature{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}.feature-art{min-height:340px;border-radius:22px;background:linear-gradient(145deg,#1c345a,#45658c);display:grid;place-items:center;color:white;font-size:6rem;position:relative;overflow:hidden}.feature-art:before,.feature-art:after{content:"";position:absolute;border:1px solid #ffffff35;border-radius:50%;width:270px;height:270px}.feature-art:after{width:390px;height:390px}.feature-copy h2{font-size:2.4rem;line-height:1.15;margin:8px 0 16px}.feature-copy p{color:var(--muted)}
+.list{padding:0;list-style:none}.list li{padding:9px 0;border-bottom:1px solid #e8ebf1}.list li:before{content:"✓";color:#a8781e;font-weight:900;margin-right:10px}
+.offer{background:var(--navy);color:white;border-radius:20px;padding:34px;display:flex;align-items:center;justify-content:space-between;gap:24px}.offer p{color:#c9d3e2;margin-bottom:0}.offer h2{margin:0;font-size:2rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-box{background:var(--paper);padding:26px;border-radius:16px}.contact-box h3{margin-top:0}.contact-box p{color:var(--muted)}.map{min-height:250px;border-radius:16px;background:linear-gradient(135deg,#e4eaf2,#f4eee2);display:grid;place-items:center;text-align:center;padding:25px;color:#52617a}
+footer{background:#0b1428;color:#d5dceb;padding:34px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-small{font-size:.8rem;color:#9eabc0}
+@media(max-width:760px){.nav{height:66px}nav{display:none;position:absolute;top:66px;left:0;right:0;background:var(--navy);padding:18px 4%;flex-direction:column;align-items:flex-start}nav.open{display:flex}.menu{display:block}.hero{padding:76px 0}.grid{grid-template-columns:1fr 1fr}.feature,.contact-grid{grid-template-columns:1fr}.feature-art{min-height:240px}.offer{align-items:flex-start;flex-direction:column}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.hero h1{font-size:2.6rem}section{padding:58px 0}.card .visual{height:145px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <a class="brand" href="#home">BUDAUN CITY MALL<span>SHOP • DINE • DISCOVER</span></a>
+  <button class="menu" aria-label="Open navigation" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+  <nav>
+    <a href="#home">Home</a><a href="#stores">Explore</a><a href="#experience">Experience</a><a href="#offers">Offers</a><a href="#visit">Visit Us</a>
+  </nav>
+</div></header>
+<div class="notice">Independent concept demo — not an official mall website. All details and branding must be approved by mall management.</div>
+<main>
+<section class="hero" id="home"><div class="wrap">
+  <div class="eyebrow">Your city. Your destination.</div>
+  <h1>Make every visit<br>worth remembering.</h1>
+  <p>Discover a place for shopping, food and entertainment. Explore what the mall has to offer and plan your next visit.</p>
+  <div class="actions"><a class="btn" href="#stores">Explore the mall</a><a class="btn secondary" href="#visit">Plan your visit</a></div>
+</div></section>
+<section id="stores"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Explore</div><h2>Something for every kind of day</h2><p>Browse the mall's shopping, dining and entertainment categories. Confirmed store names and floor details can be added after approval.</p></div>
+  <div class="grid">
+    <article class="card"><div class="visual">🛍️</div><div class="card-content"><h3>Fashion & Lifestyle</h3><p>Discover clothing, accessories and everyday essentials.</p><span class="tag">Store directory coming soon</span></div></article>
+    <article class="card"><div class="visual">🍽️</div><div class="card-content"><h3>Food & Dining</h3><p>Find places to enjoy a meal, snack or coffee with friends.</p><span class="tag">Dining directory coming soon</span></div></article>
+    <article class="card"><div class="visual">🎬</div><div class="card-content"><h3>Movies & Entertainment</h3><p>Explore cinema information and entertainment options.</p><span class="tag">Show details to be confirmed</span></div></article>
+  </div>
+</div></section>
+<section class="alt" id="experience"><div class="wrap feature">
+  <div class="feature-art" aria-label="Decorative shopping bag icon">✦</div>
+  <div class="feature-copy"><div class="eyebrow">The mall experience</div><h2>More than shopping.</h2><p>Make it a day out. Catch up with friends, discover something new and enjoy time together.</p>
+    <ul class="list"><li>Store and floor directory</li><li>Food and entertainment information</li><li>Latest events and announcements</li><li>Visitor information in one place</li></ul>
+  </div>
+</div></section>
+<section id="offers"><div class="wrap">
+  <div class="offer"><div><div class="eyebrow">Stay in the loop</div><h2>Offers & upcoming events</h2><p>Special promotions and event announcements will appear here once confirmed by mall management.</p></div><a class="btn" href="#visit">Get in touch</a></div>
+</div></section>
+<section id="visit"><div class="wrap">
+  <div class="section-head"><div class="eyebrow">Visit us</div><h2>Plan your visit</h2><p>Official address, opening hours, phone number and map link should be verified with mall management before publishing.</p></div>
+  <div class="contact-grid">
+    <div class="contact-box"><h3>Visitor information</h3><p><strong>Location</strong><br> Budaun, Uttar Pradesh — exact address to be confirmed</p><p><strong>Opening hours</strong><br> To be confirmed by mall management</p><p><strong>Contact</strong><br> Official phone / email to be added with permission</p></div>
+    <div class="map"><div><div style="font-size:2.5rem">📍</div><strong>Map location placeholder</strong><br><small>Add the verified Google Maps location here after approval.</small></div></div>
+  </div>
+</div></section>
+</main>
+<footer><div class="wrap footer-row"><div><strong>BUDAUN CITY MALL</strong><div class="footer-small">Concept website preview</div></div><div class="footer-small">© <span id="year"></span> Demo concept. Not affiliated with or endorsed by the mall.</div></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav').classList.remove('open')));</script>
+</body></html>
